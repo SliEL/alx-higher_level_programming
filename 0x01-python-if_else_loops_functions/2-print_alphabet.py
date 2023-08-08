@@ -3,4 +3,5 @@
 
 """Print the lowercase alphabet not followed by a new line."""
 for num in range(97, 123):
-    print("{}".format(chr(num)), end="")
+    print(chr(num), end='')
+print()
