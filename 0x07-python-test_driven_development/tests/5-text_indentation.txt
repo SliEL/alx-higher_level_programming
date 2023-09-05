@@ -1,0 +1,79 @@
+# Test cases for text_indentation function
+# Ensure that the function meets the specified requirements
+
+# Test case 1: Valid input with multiple sentences separated by . (periods)
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
+rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
+stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
+cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
+beatiorem! Iam ruinas videres""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.$
+$
+Quonam modo?$
+$
+Utrum igitur tibi litteram videor an totas paginas commovere?$
+$
+Non autem hoc:$
+$
+igitur ne illud quidem.$
+$
+Fortasse id optimum, sed ubi illud:$
+$
+Plus semper voluptatis?$
+$
+Teneo, inquit, finem illi videri nihil dolere.$
+$
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.$
+$
+Si id dicis, vicimus.$
+$
+Inde sermone vario sex illa a Dipylo stadia confecimus.$
+$
+Sin aliud quid voles, postea.$
+$
+Quae animi affectio suum cuique tribuens atque hanc, quam dico.$
+$
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+
+# Test case 2: Valid input with multiple sentences separated by ? (question marks)
+>>> text_indentation("How are you? What's your name? I'm fine, thanks.")
+How are you?$
+$
+What's your name?$
+$
+I'm fine, thanks.
+
+# Test case 3: Valid input with multiple sentences separated by : (colons)
+>>> text_indentation("Title: The Python Programming Language. Author: Guido van Rossum.")
+Title:$
+$
+The Python Programming Language.$
+$
+Author:$
+$
+Guido van Rossum.
+
+# Test case 4: Valid input with multiple sentences separated by ., ?, and :
+>>> text_indentation("Sentence one. Sentence two? Sentence three: Sentence four.")
+Sentence one.$
+$
+Sentence two?$
+$
+Sentence three:$
+$
+Sentence four.
+
+# Test case 5: Valid input with a single sentence without punctuation
+>>> text_indentation("No punctuation in this sentence")
+No punctuation in this sentence
+
+# Test case 6: Invalid input, text is not a string
+>>> try:
+...     text_indentation(12345)
+... except Exception as e:
+...     str(e)
+'text must be a string'

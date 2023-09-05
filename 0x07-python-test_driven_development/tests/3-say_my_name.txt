@@ -1,0 +1,28 @@
+# Test cases for say_my_name function
+# Ensure that the function meets the specified requirements
+
+# Test case 1: Valid input with both first_name and last_name as strings
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+# Test case 2: Valid input with both first_name and last_name as strings
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+# Test case 3: Valid input with only first_name provided (last_name is empty)
+>>> say_my_name("Bob")
+My name is Bob
+
+# Test case 4: Invalid input, first_name is not a string
+>>> try:
+...     say_my_name(12, "White")
+... except Exception as e:
+...     str(e)
+'first_name must be a string'
+
+# Test case 5: Invalid input, last_name is not a string
+>>> try:
+...     say_my_name("John", 123)
+... except Exception as e:
+...     str(e)
+'last_name must be a string'

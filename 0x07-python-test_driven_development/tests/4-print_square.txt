@@ -1,0 +1,44 @@
+# Test cases for print_square function
+# Ensure that the function meets the specified requirements
+
+# Test case 1: Valid input, size is a positive integer (4)
+>>> print_square(4)
+####
+####
+####
+####
+
+# Test case 2: Valid input, size is a larger positive integer (10)
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# Test case 3: Valid input, size is 0
+>>> print_square(0)
+# (empty square)
+
+# Test case 4: Valid input, size is 1
+>>> print_square(1)
+#
+
+# Test case 5: Invalid input, size is a negative integer (-1)
+>>> try:
+...     print_square(-1)
+... except Exception as e:
+...     str(e)
+'size must be >= 0'
+
+# Test case 6: Invalid input, size is a float (3.5)
+>>> try:
+...     print_square(3.5)
+... except Exception as e:
+...     str(e)
+'size must be an integer'
