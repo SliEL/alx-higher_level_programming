@@ -1,0 +1,70 @@
+# Test cases for lazy_matrix_mul function (using numpy)
+# Ensure that the function meets the specified requirements
+
+# Test case 1: Valid input with two matrices of integers
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[ 7 10]
+ [15 22]]
+
+# Test case 2: Valid input with two matrices of integers (different dimensions)
+>>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13 16]]
+
+# Test case 3: Valid input with two matrices of floats
+>>> lazy_matrix_mul([[1.0, 2.5], [3.5, 4.2]], [[2.0, 1.5], [0.5, 0.2]])
+array([[3.5, 2. ],
+       [8.75, 7.7]])
+
+# Test case 4: Valid input with one empty matrix (m_a)
+>>> lazy_matrix_mul([], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: matrices are empty or not 2D arrays
+
+# Test case 5: Valid input with one empty matrix (m_b)
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+    ...
+ValueError: matrices are empty or not 2D arrays
+
+# Test case 6: Invalid input, m_a is not a list
+>>> try:
+...     lazy_matrix_mul("matrix_a", [[1, 2], [3, 4]])
+... except Exception as e:
+...     str(e)
+'m_a must be a list'
+
+# Test case 7: Invalid input, m_b is not a list
+>>> try:
+...     lazy_matrix_mul([[1, 2], [3, 4]], "matrix_b")
+... except Exception as e:
+...     str(e)
+'m_b must be a list'
+
+# Test case 8: Invalid input, m_a contains non-integer and non-float elements
+>>> try:
+...     lazy_matrix_mul([["a", 2], [3, 4]], [[1, 2], [3, 4]])
+... except Exception as e:
+...     str(e)
+'m_a should contain only integers or floats'
+
+# Test case 9: Invalid input, m_b contains non-integer and non-float elements
+>>> try:
+...     lazy_matrix_mul([[1, 2], [3, 4]], [["b", 2], [3, 4]])
+... except Exception as e:
+...     str(e)
+'m_b should contain only integers or floats'
+
+# Test case 10: Invalid input, m_a and m_b have different row sizes
+>>> try:
+...     lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [4, 5, 6]])
+... except Exception as e:
+...     str(e)
+'matrices are not aligned for multiplication'
+
+# Test case 11: Invalid input, matrices cannot be multiplied
+>>> try:
+...     lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4], [5, 6]])
+... except Exception as e:
+...     str(e)
+'matrices are not aligned for multiplication'
