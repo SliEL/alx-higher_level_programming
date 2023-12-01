@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """A script that takes in a letter and sends a POST request to n-webpage
 with the letter as a parameter."""
-import sys, requests
+import sys
+import requests
 
 if __name__ == '__main__':
 
@@ -17,4 +18,3 @@ if __name__ == '__main__':
             print("[{}] {}".format(response.get("id"), response.get("name")))
     except ValueError:
         print("Not a valid JSON")
-        
