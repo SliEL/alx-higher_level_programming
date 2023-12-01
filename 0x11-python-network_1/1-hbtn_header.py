@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Fetchs a url and display value of the X-Request-Id"""
-import sys, urllib.request
+import sys
+import urllib.request
 
 if __name__ == '__main__':
 
