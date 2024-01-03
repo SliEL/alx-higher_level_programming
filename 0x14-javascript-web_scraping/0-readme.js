@@ -13,4 +13,3 @@ fs.readFile(file, 'utf8', function (err, data){
         process.stdout.write(data);
     }
 });
-
